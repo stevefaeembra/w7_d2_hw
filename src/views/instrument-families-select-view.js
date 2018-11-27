@@ -1,4 +1,3 @@
-//const InstrumentFamilies = require('./instrument_families.js');
 const PubSub = require("../helpers/pub-sub.js");
 
 const InstrumentFamiliesSelectView = function (element) {

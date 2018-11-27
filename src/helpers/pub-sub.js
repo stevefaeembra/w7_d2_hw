@@ -1,17 +1,23 @@
-// these are like Ruby class (self.X) methods
+// steven's custom PubSub
 
 const PubSub = {
+  // send a payload out on channel
   publish : function(channel, payload){
     const event = new CustomEvent(channel, { detail: payload } );
     console.log(`Published on ${channel} : ${ JSON.stringify(payload) }`);
     document.dispatchEvent(event);
   },
+  // register interest in an event, with the code to run
+  // when this event is emitted
   subscribe: function(channel, callback){
     console.log(`New subscription added on ${channel}`);
     document.addEventListener(channel, callback);
   },
+  // optional. call this on the first line of your
+  // subscribe callback like so...
+  // PubSub.signForDelivery(this, event)
   signForDelivery: function(object, event) {
-    console.log(`${object.__proto__.constructor.name} received ${event.detail} on ${event.type}`);
+    console.log(`${object.__proto__.constructor.name} received ${JSON.stringify(event.detail)} on ${event.type}`);
   }
 };
 
