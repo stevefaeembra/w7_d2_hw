@@ -3,12 +3,16 @@
 const PubSub = {
   publish : function(channel, payload){
     const event = new CustomEvent(channel, { detail: payload } );
-    console.log(`New event on ${channel} : ${ payload }`);
+    console.log(`Published on ${channel} : ${ payload }`);
     document.dispatchEvent(event);
   },
   subscribe: function(channel, callback){
-    console.log(`New event on ${channel}`);
+    console.log(`New subscription added on ${channel}`);
     document.addEventListener(channel, callback);
+  },
+  log: function(object, event) {
+    debugger;
+    console.log(`${object.__proto__.constructor.name} received ${event.detail} on ${event.type}`);
   }
 };
 

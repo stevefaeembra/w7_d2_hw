@@ -6,6 +6,7 @@ Notes
 make this a simple wrapper around the InstrumentsFamilies class.
 
 When initialised, should publish the list of Instrument Family names to channel "InstrumentFamiliesModel:family-names"
+- DONE
 
 Listen on channel "InstrumentFamiliesSelectView:selected-family"
 
