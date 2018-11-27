@@ -4,6 +4,13 @@ const InstrumentFamiliesInfoView = function (element) {
   this.element = element;
 };
 
+InstrumentFamiliesInfoView.prototype.clearInfo = function () {
+  // clears the info view
+  while(this.element.hasChildNodes()) {
+    this.element.removeChild(this.element.firstChild);
+  }
+};
+
 InstrumentFamiliesInfoView.prototype.showInfo = function (familyInfo) {
   // extract fields
 
@@ -12,6 +19,10 @@ InstrumentFamiliesInfoView.prototype.showInfo = function (familyInfo) {
 
   // get injection point
   const infoDiv = document.querySelector("#instrument-family-info");
+
+
+  // clear the info so we don't just append stuff
+  this.clearInfo();
 
   const nameDiv = document.createElement("div");
   nameDiv.className = "name"
