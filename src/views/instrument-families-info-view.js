@@ -48,9 +48,7 @@ InstrumentFamiliesInfoView.prototype.bindEvents = function () {
     event.preventDefault();
     const selectedFamilyInfo = event.detail;
     this.showInfo(selectedFamilyInfo);
-  })
-
-
+  });
 };
 
 module.exports = InstrumentFamiliesInfoView;

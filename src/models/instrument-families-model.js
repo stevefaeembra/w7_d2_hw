@@ -29,6 +29,7 @@ InstrumentFamiliesModel.prototype.bindEvents = function () {
 };
 
 InstrumentFamiliesModel.prototype.getFamilyNames = function () {
+  // returns a list of instrument family names
   const instrumentFamilies = this.instrumentFamilies.instrumentFamilies;
   const familyNames = instrumentFamilies.map((family) => {
     return family.name
