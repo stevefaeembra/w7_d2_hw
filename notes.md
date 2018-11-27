@@ -17,6 +17,7 @@ This should trigger a call to **getInstrumentFamily(name)** method which publish
 
 Should subscribe to ""InstrumentFamiliesModel:family-names"
 When received it should add the options to the HTML family under id="instrument-families"
+- DONE
 
 This
 This should listen for 'change' event on the id=instrument-families select.
