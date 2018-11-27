@@ -1,8 +1,8 @@
 //const InstrumentFamilies = require('./instrument_families.js');
 const PubSub = require("../helpers/pub-sub.js");
 
-const InstrumentFamiliesSelectView = function () {
-
+const InstrumentFamiliesSelectView = function (element) {
+  this.element = element; // widget we're bindig to
 };
 
 
@@ -30,6 +30,12 @@ InstrumentFamiliesSelectView.prototype.bindEvents = function () {
     const listOfInstrumentTypes = event.detail;
     this.updateOptions(listOfInstrumentTypes);
   });
+  // listen for a change in the pulldown, fire off on
+  // a channel with the selected name
+  this.element.addEventListener('change',(event) => {
+    const selectedFamily = event.target.value;
+    PubSub.publish("InstrumentFamiliesSelectView:selected-family", selectedFamily);
+  })
 };
 
 module.exports = InstrumentFamiliesSelectView;

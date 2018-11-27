@@ -4,10 +4,10 @@ const InstrumentFamiliesSelectView = require("./views/instrument-families-select
 document.addEventListener('DOMContentLoaded', () => {
   console.log('JavaScript Loaded');
 
-  let instrumentFamiliesSelectView = new InstrumentFamiliesSelectView();
+  let instrumentFamiliesSelectView = new InstrumentFamiliesSelectView(document.querySelector("#instrument-families"));
   instrumentFamiliesSelectView.bindEvents();
 
   let instrumentFamiliesModel = new InstrumentFamiliesModel();
   instrumentFamiliesModel.bindEvents();
-  
+
 });
