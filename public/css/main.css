@@ -13,9 +13,13 @@ body {
   margin: 0 auto; /** center **/
 }
 
+h1 {
+  font-size: 2rem;
+}
+
 .name {
   margin-top: 1rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 
@@ -26,8 +30,10 @@ body {
 
 .instruments-list {
   margin-top: 1rem;
+  font-weight: bold;
 }
 
 .instruments-list li {
   margin-left: 2rem;
+  font-weight: normal;
 }

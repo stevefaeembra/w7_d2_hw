@@ -40,7 +40,7 @@ InstrumentFamiliesInfoView.prototype.showInfo = function (familyInfo) {
   // per instrument
   const instrumentsList = document.createElement("ul");
   instrumentsList.className = `instruments-list`;
-  instrumentsList.textContent = "List of instruments:-"
+  instrumentsList.textContent = "Instruments include"
   const listOfInstruments = familyInfo.instruments;
   listOfInstruments.forEach((instrumentName) => {
     const instrumentItem = document.createElement("li");
