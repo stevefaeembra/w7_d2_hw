@@ -24,6 +24,21 @@ InstrumentFamiliesInfoView.prototype.showInfo = function (familyInfo) {
   // pop these into the injection point
   infoDiv.appendChild(nameDiv);
   infoDiv.appendChild(descriptionDiv);
+
+  // now for extensions, create a ul with one li item
+  // per instrument
+  const instrumentsList = document.createElement("ul");
+  instrumentsList.className = `instruments-list`;
+  instrumentsList.textContent = "List of instruments:-"
+  const listOfInstruments = familyInfo.instruments;
+  listOfInstruments.forEach((instrumentName) => {
+    const instrumentItem = document.createElement("li");
+    instrumentItem.className = `instruments-list--${instrumentName}`;
+    instrumentItem.textContent = instrumentName;
+    instrumentsList.appendChild(instrumentItem);
+  })
+  infoDiv.appendChild(instrumentsList);
+
 };
 
 InstrumentFamiliesInfoView.prototype.bindEvents = function () {
