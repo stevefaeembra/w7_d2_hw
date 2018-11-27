@@ -10,8 +10,7 @@ const PubSub = {
     console.log(`New subscription added on ${channel}`);
     document.addEventListener(channel, callback);
   },
-  log: function(object, event) {
-    debugger;
+  signForDelivery: function(object, event) {
     console.log(`${object.__proto__.constructor.name} received ${event.detail} on ${event.type}`);
   }
 };
